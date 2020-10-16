@@ -48,6 +48,24 @@ https://docs.bazel.build/versions/master/install-os-x.html
 
 
 
+## 示例项目结构
+
+**BazelProject**
+
+主项目，它其中包括lib、test、main三个分目录，分别是库目录、库的单元测试目录、运行主目录。创建Bazel项目可以采用这种结构
+
+主项目会依赖Git仓库的项目、本地项目、远程归档项目，依赖方式在WORKSPACE和BUILD中有详细展示，可参照
+
+**localBazelProj**
+
+主项目依赖的本地Bazel项目
+
+**localProj**
+
+主项目依赖的本地非Bazel项目
+
+
+
 ## 非Bazel项目依赖
 
 **本地非Bazel项目**
@@ -75,6 +93,8 @@ new_git_repository(
 ```
 
 为了构建这样的外部依赖，同样需要自己编写build_file（当然也可以调用外部工具链，比如cmake）。new_git_repository中的build_file不能放在workspace根路径下，必须创建一个子目录external，然后将BUILD.test放在里面。否则构建时会报错：No regular file in xx/xx/external/BUILD.test（有点坑，官方文档没提这一点）
+
+
 
 ## 外部工具使用
 
