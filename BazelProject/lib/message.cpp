@@ -1,7 +1,7 @@
 #include <iostream>
 #include "message.h"
-//#include "ssl/ssl.h"
-#include "MyLib/thing.pb.h"
+#include "ssl/ssl.h"
+#include "lib/thing.pb.h"
 std::string get_message() {
     example::Thing thing;
     thing.set_name("zjx");

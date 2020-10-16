@@ -6,7 +6,7 @@ load("@rules_cc//cc:defs.bzl","cc_binary")
 
 proto_library(
     name = "thing_proto",
-    srcs = ["MyLib/thing.proto"],
+    srcs = ["lib/thing.proto"],
 )
 
 cc_proto_library(
@@ -15,9 +15,9 @@ cc_proto_library(
 )
 
 cc_library(
-    name = "MyLib",
-    hdrs = glob(["MyLib/*.h"]),
-    srcs = ["MyLib/message.cpp"],
+    name = "lib",
+    hdrs = glob(["lib/*.h"]),
+    srcs = ["lib/message.cpp"],
     deps = [
         ":cpp_thing_proto",
         "@bazelTest//:bazelTest",
@@ -31,15 +31,15 @@ cc_binary (
     name = "hello",
     srcs = ["main/test.cpp"],
     deps = [
-        ":MyLib"
+        ":lib"
     ],
 )
 
 cc_test(
-    name = "MyTest",
+    name = "test",
     srcs = glob(["test/*.cpp"]),
     deps = [
-        ":MyLib",
+        ":lib",
         "@googletest//:gtest",
         "@googletest//:gtest_main",
     ],

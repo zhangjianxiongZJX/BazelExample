@@ -1,5 +1,5 @@
 #include <iostream>
-#include "MyLib/message.h"
+#include "lib/message.h"
 
 int main() {
     std::cout << "\n" << get_message() << std::endl;
