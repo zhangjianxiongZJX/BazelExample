@@ -1,0 +1,14 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+cc_library(
+    name = "openssl",
+    srcs = glob([
+        "ssl/*.h",
+        "ssl/*.cc",
+    ]),
+    hdrs = glob([
+        "ssl/*.h",
+    ]),
+    
+    visibility = ["//visibility:public"],
+)

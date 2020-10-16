@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package example;
+
+
+message Thing {
+    string name = 1;
+    string payload = 2;
+}

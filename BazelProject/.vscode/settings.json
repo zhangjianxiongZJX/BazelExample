@@ -1,0 +1,8 @@
+{
+    "editor.fontFamily": "Consolas,'Courier New',monospace",
+    "files.associations": {
+        "algorithm": "cpp",
+        "string": "cpp",
+        "typeinfo": "cpp"
+    }
+}
